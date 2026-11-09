@@ -24,7 +24,7 @@ jobs:
       - name: Build Docker image
         run: |
           # 同时打上日期标签和 latest 标签
-          docker build -t databasus-custom:${{ env.TODAY }} -t databasus-custom:latest .
+          docker build -t databasus-custom:${{ env.TODAY }} .
 
       - name: Save and compress Docker image
         run: |
