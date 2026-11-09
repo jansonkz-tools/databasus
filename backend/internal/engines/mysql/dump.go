@@ -65,7 +65,7 @@ func (s *Source) buildDumpArgs(spec DumpSpec) []string {
 		// a global PROCESS privilege that a backup role has no other use for and that managed
 		// providers often refuse to grant.
 		"--no-tablespaces",
-		"--source-data=2",
+		"--master-data=2",
 	}
 
 	// Triggers are on by default, so a role without the privilege has to be opted out explicitly
