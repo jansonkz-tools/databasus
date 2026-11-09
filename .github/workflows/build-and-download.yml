@@ -30,12 +30,12 @@ jobs:
         run: |
           # 导出镜像时，把日期标签和 latest 标签都包含进去
           # 导出文件名也带上日期，方便你下载后区分
-          docker save databasus-custom:${{ env.TODAY }} databasus-custom:latest | gzip > databasus-custom-image-${{ env.TODAY }}.tar.gz
+          docker save databasus-custom:${{ env.TODAY }} | gzip > databasus-custom-${{ env.TODAY }}.tar.gz
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
           # Artifact 的名字也带上日期
-          name: databasus-image-${{ env.TODAY }}
-          path: databasus-custom-image-${{ env.TODAY }}.tar.gz
+          name: databasus-${{ env.TODAY }}
+          path: databasus-custom-${{ env.TODAY }}.tar.gz
           retention-days: 7 
